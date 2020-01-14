@@ -4,7 +4,7 @@ import Button from '../../UI/Button/Buttons'
 
 class OrderSummary extends Component {
   //This could be functional component, just doing console log for error checking
-  componentWillUpdate(){
+  UNSAFE_componentWillUpdate(){
     console.log("[OrderSummary] WillUpdate")
   }
 
@@ -25,7 +25,7 @@ class OrderSummary extends Component {
         <ul>
           {ingredientSummary}
         </ul>
-        <p><strong>Total Price:${this. props.price.toFixed(2)}</strong></p>
+        <p><strong>Total Price:${this.props.price.toFixed(2)}</strong></p>
         <p>Continue to Checkout?</p>
         <Button btnType="Danger" clicked={this.props.purchaseCancelled}>CANCEL</Button>
         <Button btnType="Success" clicked={this.props.purchaseContinued}>CONTINUE</Button>
